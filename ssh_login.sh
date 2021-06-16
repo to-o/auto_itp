@@ -1,4 +1,12 @@
 #!/usr/bin/expect -f
+###
+ # @Author: your name
+ # @Date: 2021-06-16 16:46:44
+ # @LastEditTime: 2021-06-16 17:30:49
+ # @LastEditors: Please set LastEditors
+ # @Description: In User Settings Edit
+ # @FilePath: \auto_itp\ssh_login.sh
+### 
 
 set timeout 10
 set username 	       [lindex $argv 0]
@@ -72,13 +80,3 @@ expect {
 }
 
 interact
-
-
-
-
-
-
-
-
-
-

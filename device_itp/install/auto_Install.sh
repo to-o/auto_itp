@@ -1,4 +1,12 @@
 #!/bin/sh
+###
+ # @Author: your name
+ # @Date: 2021-06-16 16:46:44
+ # @LastEditTime: 2021-06-16 19:10:03
+ # @LastEditors: Please set LastEditors
+ # @Description: In User Settings Edit
+ # @FilePath: \auto_itp\device_itp\install\auto_Install.sh
+### 
 #以最高权限执行
 
 INSTALL=1 		#单执行还是进行安装
@@ -20,7 +28,7 @@ if [ $INSTALL ];then
 
 	echo "-------------编译安装中-----------"
 	sudo ./configure
-	sudo make -j8 >/dev/null
+	sudo make -j8 >/dev/null 2>&1
 	echo "-------------编译完成-----------"
 	sudo make install >/dev/null
 	echo "-------------安装完成-----------"
@@ -43,11 +51,12 @@ fi
 #执行脚本
 if [ $RUNCODE ];then
 	#//-t后的参数为运行时间，单位为消失，按照实际设置，一般桌面版本执行24h，服务器版本执行168h，定制版本根据需求设置；-n表示不跑网络压力测试；-p表示生成易读的日志文件；-I表示记录测试日志的文件。
-	echo "-------------开始进行脚本测试-----------"
+	echo "-------------开始启动ITP脚本-----------"
 	cd /opt/ltp/testscripts
 	sudo chmod 777 ltpstress20200515.sh
 	#执行放入后台中
-	sudo ./ltpstress20200515.sh -n -t 168 -p -l /opt/ltp/ltpstress.result &
+	sudo ./ltpstress20200515.sh -n -t 168 -p -l /opt/ltp/ltpstress.result >/dev/null &
+	echo "-------------ITP脚本进入后台运行-----------"
 fi
 
 echo "-------------ALL DONE-----------"

@@ -4,7 +4,8 @@
 #my_device=("kylin 123qwe 192.168.17.111","kylin k123123 192.168.17.196")
 
 # my_device=("kylin k123123 192.168.17.89") 以开启
-# my_device=("kylin 123qwe 192.168.17.217") 以开启
+ my_device=("kylin 123qwe 192.168.17.217") #以开启
+
 
 
 #此主机的密码
